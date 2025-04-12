@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Créer un compte</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li><strong>{{ category.title() }}:</strong> {{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        Nom d'utilisateur: <input name="username" required><br>
+        Email: <input type="email" name="email" required><br>
+        Mot de passe: <input type="password" name="password" required><br>
+    
+        Rôle:
+        <select name="role">
+            <option value="employee" selected>Employé</option>
+            <option value="admin">Administrateur</option>
+        </select><br>
+    
+        <button type="submit">S'inscrire</button>
+    </form>
+    
+    <p>Déjà inscrit ? <a href="{{ url_for('oauth.login') }}">Se connecter</a></p>
+</body>
+</html>
