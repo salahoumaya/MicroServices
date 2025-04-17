@@ -1,0 +1,4 @@
+2025-04-14 17:57:10.719035+01:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "[*]selcect * from candidature"; attendu "SAVEPOINT, SCRIPT, SHUTDOWN"
+Syntax error in SQL statement "[*]selcect * from candidature"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+selcect * from candidature [42001-224]
